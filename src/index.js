@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import needed libraries
+import React from 'react'
+import {render} from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// import the view and the viewModel
+import {TodoView} from './TodoView'
+import {TodoViewModel} from './TodoViewModel'
+
+// create a viewModel singleton
+const model = new TodoViewModel()
+
+// render the editor
+render(<TodoView model={model} />, document.getElementById('root'))
